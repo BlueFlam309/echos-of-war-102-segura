@@ -1,0 +1,45 @@
+@use "/src/styles/variables.scss" as var;
+
+.side-filter {
+    display: flex;
+    flex-direction: column;
+    gap: var.px-vw(20);
+    .side-filter__title {
+        font-weight: 600;
+        font-size: var.px-vw(22);
+        letter-spacing: var.px-vw(0.5);
+    }
+    .side-filter__divider {
+        margin-block: var.px-vw(10);
+        width: 100%;
+        height: var.px-vw(1);
+        background-color: #757575;
+    }
+    .side-filter__options {
+        display: flex;
+        flex-direction: column;
+        padding-left: var.px-vw(20);
+        gap: var.px-vw(10);
+        .side-filter__checkbox-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: var.px-vw(10);
+            
+            label {
+                font-size: var.px-vw(19);
+            }
+            .side-filter__checkbox {
+                margin: 0;
+                padding: 0;
+                width: var.px-vw(22);
+                height: var.px-vw(22);
+                &:disabled {
+                    accent-color: #4f46e5;
+                    opacity: 1;
+                }
+    
+            }
+        }
+    }
+}

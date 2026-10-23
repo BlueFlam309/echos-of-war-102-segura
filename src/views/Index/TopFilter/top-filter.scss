@@ -1,0 +1,38 @@
+@use "/src/styles/variables.scss" as var;
+
+.top-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var.px-vw(20);
+    .top-filter__search-bar {
+        position: relative;
+        .top-filter__input-search {
+            box-sizing: border-box;
+            background: #ffffff;
+            font-weight: 400;
+            line-height: 110%;
+            width: var.px-vw(450);
+            height: var.px-vw(45);
+            border: var.px-vw(1) solid var.$main-black-color;
+            border-radius: var.px-vw(15);
+            letter-spacing: var.px-vw(0.5);
+            font-size: var.px-vw(25);
+            padding-left: var.px-vw(20);
+            padding-right: var.px-vw(45);
+            &::placeholder {
+                color: var.$secondary-gray-color;
+            }
+        }
+        .top-filter__search-icon {
+            position: absolute;
+            object-fit: cover;
+            top: 50%;
+            transform: translateY(-50%);
+            right: var.px-vw(10);
+            width: var.px-vw(30);
+            height: var.px-vw(30);
+        }
+    }
+}

@@ -1,0 +1,69 @@
+@use "/src/styles/variables.scss" as var;
+
+.lang {
+    position: relative;
+    width: var.px-vw(95);
+    .lang__flag {
+        object-fit: cover;
+        width: var.px-vw(38);
+        height: var.px-vw(25);
+    }
+    .lang-trigger {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        .lang__change {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: var.$main-black-color;
+            font-weight: 500;
+            font-size: var.px-vw(18);
+            gap: var.px-vw(5);
+            .arrow {
+                transition: transform 0.2s;
+                width: var.px-vw(20);
+                height: var.px-vw(20);
+                &--open {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .lang__dropdown {
+        all: unset;
+        position: absolute;
+        overflow: hidden;
+        background-color: var.$main-gray-color;
+        z-index: 100;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        border-radius: var.px-vw(15);
+        box-shadow: 0 var.px-vw(10) var.px-vw(30) rgba(0, 0, 0, 0.2);
+        .lang__list {
+            .lang__option {
+                all: unset;
+                cursor: pointer;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                transition: background 0.2s;
+                font-weight: 500;
+                gap: var.px-vw(10);
+                padding: var.px-vw(10) var.px-vw(14);
+                font-size: var.px-vw(18);
+                &:hover {
+                    background: #3397f4;
+                }
+                &--active {
+                    background-color: #3397f4;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

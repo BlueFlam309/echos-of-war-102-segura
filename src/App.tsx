@@ -1,11 +1,24 @@
-import './App.css'
+import { BrowserRouter as Router } from 'react-router-dom';
+import { AppRouter } from './routes/AppRouter';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './I18n/i18n';
+import { useEffect } from 'react';
+import './App.css';
+
 
 function App() {
+   useEffect(() => {
+      i18n.changeLanguage(i18n.language);
+   }, [i18n.language]);
 
-  return (
-    <>
-    </>
-  )
+   return (
+      <I18nextProvider i18n={i18n}>
+         <Router>
+            <main id="main-content">
+               <AppRouter />
+            </main>
+         </Router>
+      </I18nextProvider>
+   );
 }
-
-export default App
+export default App;

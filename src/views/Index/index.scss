@@ -1,0 +1,27 @@
+@use "/src/styles/variables.scss" as var;
+
+.index {
+    display: flex;
+    flex-direction: row;
+    padding: var.px-vw(30);
+    gap: var.px-vw(40);
+    height: auto;
+    .index__side-filter {
+        box-sizing: border-box;
+        width: 23%;
+    }
+    .index__content {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        gap: var.px-vw(30);
+        .index__top-filter {
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .index__recipe-grid {
+            box-sizing: border-box;
+            width: 100%;
+        }
+    }
+}

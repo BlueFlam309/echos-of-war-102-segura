@@ -1,0 +1,35 @@
+@use "sass:math";
+
+@mixin mobile {
+    @media (max-width: 949px) {
+        @content;
+    }
+}
+
+@mixin web {
+    @media (min-width: 950px) {
+        @content;
+    }
+}
+
+$main-gray-color: #F5F5F5;
+$secondary-gray-color: #374151;
+$tertiary-gray-color: #D9D9D9;
+$main-black-color: #111827;
+$main-green-color: #4CAF50;
+$main-blue-color: #1E3A5F;
+$secondary-blue-color: #2C5282;
+$tertiary-blue-color: #EAF2FB;
+
+$web: 1920;
+$mobile: 400;
+
+@function px-vw($px, $type: 1) {
+    $base: $web;
+
+    @if $type != 1 {
+        $base: $mobile;
+    }
+
+    @return math.div($px, $base) * 100vw;
+}
